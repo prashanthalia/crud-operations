@@ -1,0 +1,28 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Eno</th>
+      <th>Ename</th>
+      <th>Esal</th>
+     </tr>
+  </thead>
+  <tbody class="text-center">
+    <tr *ngFor="let x of emplist">
+      <td>{{x.id}}</td>
+      <td>{{x.ename}}</td>
+      <td>{{x.esal}}</td>
+      <td></td>
+      <td><input type="submit" (click)="searchEmpByID(x.id)" value="Edit" /></td>
+      <td><input type="submit" (click)="deleteEmpByID(x.id)" value="Delete" /></td>
+    </tr>
+  </tbody>
+</table>
+Enter Eno.
+<input type="text" [(ngModel)]="id" /><br>
+Enter Ename
+<input type="text" [(ngModel)]="ename" /><br>
+Enter salray
+<input type="number" [(ngModel)]="esal" /><br>
+<input type="submit" (click)="onSubmit()" value="save" />
+<br>
+<input type="submit" (click)="onupdate()" value="update" />
